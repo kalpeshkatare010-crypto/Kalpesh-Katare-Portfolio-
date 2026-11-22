@@ -45,7 +45,6 @@ const PROJECTS = [
 
 const EXPERIENCE = [
  {w:"Now",s:"Founder",h:"Polycomm",r:"Founder",p:"Founded a community where Polymer Engineering professionals, student researchers and enthusiasts connect on a single platform.",tags:["Community","Polymer Engineering","Networking"]},
- {w:"[Year]",s:"Learning",h:"Workshops",r:"Participant",p:"[List technical workshops attended.]",tags:["Technical"]},
  {w:"Ongoing",s:"Practice",h:"Creative & technical work",r:"Self-directed",p:"Electronics builds, editorial design for Polyconnect and hands-on print production.",tags:["Arduino","Editorial","Print"]}
 ];
 
