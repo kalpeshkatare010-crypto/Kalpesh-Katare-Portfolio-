@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=550d8d99">
+<link rel="stylesheet" href="css/site.css?v=d8d07330">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Kalpesh Katare","jobTitle":"Polymer Engineering Student","alumniOf":"Maharashtra Institute of Technology","address":{"@type":"PostalAddress","addressLocality":"Chhatrapati Sambhajinagar","addressRegion":"Maharashtra","addressCountry":"IN"},"email":"mailto:kalpeshkatare010@gmail.com","url":"https://kalpeshkatare010-crypto.github.io/Kalpesh-Katare-Portfolio-/","sameAs":["https://www.linkedin.com/in/kalpesh-katare","https://www.instagram.com/kalpesh.katare1/","https://github.com/kalpeshkatare010-crypto"]}
 </script>
@@ -119,14 +119,32 @@
     </button>
     <a class="ex-card" href="about.html" data-hover="ABOUT"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="n">02 — ABOUT</span><div><h3>Beyond the material.</h3><p>Who I am, what I study, and my experience outside the classroom.</p></div></a>
     <a class="ex-card" href="materials.html" data-hover="EXPLORE"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="n">03 — MATERIALS</span><div><h3>Understanding materials.</h3><p>Original plates and diagrams — from resin pellets to processing and lab characterization.</p></div></a>
-    <a class="ex-card" href="projects.html" data-hover="VIEW"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="n">04 — PROJECTS</span><div><h3>Work in progress.</h3><p>Software, electronics and editorial design — three builds so far.</p></div></a>
+    <a class="ex-card" href="projects.html" data-hover="VIEW"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="n">04 — PROJECTS</span><div><h3>Work in progress.</h3><p>A SaaS product, a community, electronics and editorial design.</p></div></a>
     <a class="ex-card" href="print.html" data-hover="PLAY"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="n">05 — PRINT</span><div><h3>The art of print.</h3><p>Hands-on print production, with an interactive CMYK halftone to play with.</p></div></a>
     <a class="ex-card" href="contact.html" data-hover="SAY HI"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="n">06 — CONTACT</span><div><h3>Let's talk.</h3><p>Email, LinkedIn, GitHub and Instagram — say hello.</p></div></a>
   </div>
 </section>
+<!-- POLYCOMM -->
+<section class="sec wrap" id="polycomm" aria-labelledby="pc-h">
+  <div class="sec-head"><span class="sec-num">02</span><h2 class="big" id="pc-h"><span class="line-mask"><span>One chain,</span></span><span class="line-mask"><span class="lime">many links.</span></span></h2></div>
+  <div class="pc">
+    <div class="pc-copy">
+      <span class="eyebrow">Founder · Community</span>
+      <img class="pc-logo" src="img/polycomm-logo.webp" alt="Polycomm" width="900" height="198" loading="lazy">
+      <p class="pc-lead">I founded Polycomm — a community where Polymer Engineering professionals, student researchers and enthusiasts connect on a single platform.</p>
+      <p style="color:var(--tx2);font-size:15px;max-width:48ch">Like monomers forming a chain, every member makes the whole network stronger. Industry experience, fresh research and curiosity — all in one place.</p>
+      <div class="pc-legend"><span><i style="background:#1F8FFF"></i>Professionals</span><span><i style="background:#F5F5F2"></i>Student researchers</span><span><i style="border:1.5px solid #929292"></i>Enthusiasts</span></div>
+    </div>
+    <div class="pc-net" id="pcNet" role="img" aria-label="Interactive network of Polycomm members: move to connect, tap to add a member" data-hover="JOIN">
+      <canvas id="pcCanvas"></canvas>
+      <span class="count" id="pcCount">0 members</span>
+      <span class="hint">Move to connect · tap to add a member</span>
+    </div>
+  </div>
+</section>
 <!-- LAB -->
 <section class="sec wrap" id="lab-sec" aria-labelledby="lab-h">
-  <div class="sec-head"><span class="sec-num">02</span><h2 class="big" id="lab-h"><span class="line-mask"><span>Build a</span></span><span class="line-mask"><span class="lime">polymer.</span></span></h2></div>
+  <div class="sec-head"><span class="sec-num">03</span><h2 class="big" id="lab-h"><span class="line-mask"><span>Build a</span></span><span class="line-mask"><span class="lime">polymer.</span></span></h2></div>
   <div class="lab" id="lab">
     <div class="lab-stage" id="labStage" role="button" tabindex="0" aria-label="Add one monomer to the chain" data-hover="+1">
       <svg id="labSvg" viewBox="0 0 600 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
@@ -147,11 +165,6 @@
     </div>
   </div>
 </section>
-<!-- MANIFESTO -->
-<section class="manifesto wrap" aria-label="Manifesto">
-  <svg class="seal" viewBox="0 0 66 66" aria-hidden="true"><circle cx="33" cy="33" r="31" fill="none" stroke="#929292"/><path d="M14 40 L22 26 L30 40 L38 26 L46 40 L54 26" fill="none" stroke="#1F8FFF" stroke-width="2"/></svg>
-  <h2 id="manifesto">Curious about <span class="hl">what</span> things are made of, <span class="hl">why</span> they behave, and <span class="hl">how</span> to make them better.</h2>
-</section>
 </main>
 <a class="next" href="about.html" data-hover="NEXT"><div><p class="eyebrow" style="margin-bottom:12px">Next page</p><p class="big">About me</p></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
 
@@ -167,12 +180,12 @@
   <p class="f-big"><span>Curious by nature.</span><span class="lime">Engineered by experience.</span></p>
   <nav class="f-nav" aria-label="Footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="materials.html">Materials</a><a href="projects.html">Projects</a><a href="print.html">Print</a><a href="contact.html">Contact</a></nav>
   <div class="f-bot"><span>© <span id="yr"></span> Kalpesh Katare</span><span>Chhatrapati Sambhajinagar, India</span><a href="#top" data-link>Back to top ↑</a></div>
-  <p class="credits">Imagery: portraits © Kalpesh Katare. All scientific plates, diagrams and textures are original renders made for this site; curves are illustrative, not measured data. No journal figures are reproduced.</p>
+  <p class="credits">Imagery: portraits of Kalpesh © Kalpesh Katare. Photographs of Steve Jobs and Carl Pei belong to their respective photographers and are used here only to credit my inspirations. All scientific plates, diagrams and textures are original renders made for this site; curves are illustrative, not measured data. No journal figures are reproduced.</p>
 </footer>
 
 <script src="js/vendor/gsap.min.js"></script>
 <script src="js/vendor/ScrollTrigger.min.js"></script>
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/site.js?v=bf958f4c"></script>
+<script src="js/site.js?v=340d00b7"></script>
 </body>
 </html>

@@ -38,12 +38,13 @@ const RESOURCES = [
 
 const PROJECTS = [
  {g:"Software",n:"01",t:"JobFlow",cat:"SaaS · Product",d:"An offline-first production management app for small-scale manufacturers: job orders, workflow stages, production entries, inventory and reports, on the web and as an Android app. Live, with a 14-day free trial and ₹999/month plan.",tools:["React","TypeScript","Supabase","Cloudflare","Android (Capacitor)","Razorpay"],cover:"jobflow",role:"Product owner — idea, features, design and launch",year:"2026",out:"Live — <a href=\"https://jobflow.kalpeshkatare010.workers.dev\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--lime)\">open JobFlow ↗</a>. Web app, Android app with in-app updates, and online subscriptions."},
- {g:"Electronics",n:"02",t:"Smart RFID Door Lock",cat:"Electronics · Embedded",d:"An access-control prototype that reads RFID tags and keypad input, shows status on an LCD and switches a solenoid lock through a relay.",tools:["Arduino Uno","RFID RC522","Keypad","LCD","Relay","Solenoid lock"],cover:"rfid",role:"[Your role]",year:"[Year]",out:"[What you learned / result]"},
- {g:"Design",n:"03",t:"Polyconnect",cat:"Editorial · Visual communication",d:"The departmental e-magazine of Plastic & Polymer Engineering — editorial design, typography and visual communication for Issue 01.",tools:["Editorial design","Typography","Layout"],cover:"mag",role:"[Your role]",year:"[Year]",out:"[Link to the issue]"},
+ {g:"Community",n:"02",t:"Polycomm",cat:"Community · Founder",d:"A community where Polymer Engineering professionals, student researchers and enthusiasts connect on a single platform — one place to learn, share and find opportunities.",tools:["Community building","Brand & design","Networking"],cover:"polycomm",role:"Founder",year:"Ongoing",out:"Growing a network that links industry, research and students in polymer engineering."},
+ {g:"Electronics",n:"03",t:"Smart RFID Door Lock",cat:"Electronics · Embedded",d:"An access-control prototype that reads RFID tags and keypad input, shows status on an LCD and switches a solenoid lock through a relay.",tools:["Arduino Uno","RFID RC522","Keypad","LCD","Relay","Solenoid lock"],cover:"rfid",role:"[Your role]",year:"[Year]",out:"[What you learned / result]"},
+ {g:"Design",n:"04",t:"Polyconnect",cat:"Editorial · Visual communication",d:"The departmental e-magazine of Plastic & Polymer Engineering — editorial design, typography and visual communication for Issue 01.",tools:["Editorial design","Typography","Layout"],cover:"mag",role:"[Your role]",year:"[Year]",out:"[Link to the issue]"},
 ];
 
 const EXPERIENCE = [
- {w:"[Year]",s:"Campus",h:"College events",r:"Organising & creative team",p:"Supporting departmental and college events with promotion and on-ground coordination. [Name events.]",tags:["Events","Coordination"]},
+ {w:"Now",s:"Founder",h:"Polycomm",r:"Founder",p:"Founded a community where Polymer Engineering professionals, student researchers and enthusiasts connect on a single platform.",tags:["Community","Polymer Engineering","Networking"]},
  {w:"[Year]",s:"Learning",h:"Workshops",r:"Participant",p:"[List technical workshops attended.]",tags:["Technical"]},
  {w:"Ongoing",s:"Practice",h:"Creative & technical work",r:"Self-directed",p:"Electronics builds, editorial design for Polyconnect and hands-on print production.",tags:["Arduino","Editorial","Print"]}
 ];
@@ -211,6 +212,7 @@ const COVER={
   ${[0,1,2,3].map(i=>`<rect x="${130+i*36}" y="${60+(i%2)*8}" width="32" height="170" fill="${i===1?'#1a1a1f':'#141418'}" stroke="${i===1?G:T}"/>`).join('')}
   <rect x="166" y="90" width="32" height="30" fill="#06203d" stroke="${G}"/><path d="M172 105 h20" stroke="${G}"/>
   <path d="M100 240 H310" stroke="${M}"/><text x="40" y="270" fill="${M}" font-family="Space Grotesk" font-size="10">MINI ROBOT · MODULAR BLOCK FORM</text>`,
+ polycomm:()=>`<rect width="400" height="300" fill="#0e0e11"/>${(()=>{const r=rnd(11);const N=Array.from({length:26},()=>[20+r()*360,20+r()*200]);let o='';N.forEach((a,i)=>N.forEach((b,j)=>{if(j>i&&Math.hypot(a[0]-b[0],a[1]-b[1])<80)o+=`<path d="M${a[0].toFixed(0)} ${a[1].toFixed(0)}L${b[0].toFixed(0)} ${b[1].toFixed(0)}" stroke="#26303d"/>`}));N.forEach((a,i)=>o+=`<circle cx="${a[0].toFixed(0)}" cy="${a[1].toFixed(0)}" r="${i%5?3:5}" fill="${i%3===0?G:i%3===1?T:'#0e0e11'}" stroke="${i%3===2?M:'none'}"/>`);return o})()}<image href="img/polycomm-logo.png" x="70" y="220" width="260" height="57"/>`,
  mag:()=>`<rect width="400" height="300" fill="#e9e9e4"/><rect x="60" y="40" width="130" height="190" fill="#0B0B0D"/><text x="72" y="80" fill="${G}" font-family="Anton" font-size="30">POLY</text><text x="72" y="110" fill="#F5F5F2" font-family="Anton" font-size="30">CONNECT</text><path d="M72 150 L90 130 L108 150 L126 130 L144 150 L162 130" stroke="${G}" stroke-width="2" fill="none"/><text x="72" y="215" fill="#929292" font-family="Space Grotesk" font-size="9">ISSUE 01</text>
   <rect x="200" y="40" width="130" height="190" fill="#fff" stroke="#cfcfc8"/>${Array.from({length:12},(_,i)=>`<rect x="212" y="${100+i*9}" width="${i%4===3?60:106}" height="3" fill="#bdbdb6"/>`).join('')}<text x="212" y="80" fill="#0B0B0D" font-family="Anton" font-size="20">FEATURE</text>
   <text x="60" y="262" fill="#555" font-family="Space Grotesk" font-size="10">DEPARTMENTAL E-MAGAZINE · EDITORIAL DESIGN</text>`,
@@ -335,6 +337,47 @@ if(!matchMedia('(hover:none),(pointer:coarse)').matches&&!RM)$$('.ex-card').forE
  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');c.style.transform=`perspective(900px) rotateX(${(.5-y)*5}deg) rotateY(${(x-.5)*6}deg)`});
  c.addEventListener('pointerleave',()=>{c.style.transform=''})});
 
+
+/* ---------- scroll progress ---------- */
+(function(){const bar=document.createElement('div');bar.className='progress';document.body.appendChild(bar);
+ const up=()=>{const h=document.documentElement.scrollHeight-innerHeight;bar.style.transform=`scaleX(${h>0?Math.min(1,scrollY/h):0})`};addEventListener('scroll',up,{passive:true});addEventListener('resize',up);up()})();
+
+/* ---------- text scramble ---------- */
+(function(){if(RM)return;const CH='ABCDEFGHKMNPRSTVXZ0123456789◆△▢';
+ function scr(el){if(el._s)return;const orig=el.dataset.txt||(el.dataset.txt=el.textContent);el._s=1;let f=0;const tot=orig.length*1.6+6;
+  (function t(){el.textContent=orig.split('').map((c,i)=>c===' '||i<(f/tot)*orig.length*1.05?c:CH[Math.random()*CH.length|0]).join('');if(++f<tot)requestAnimationFrame(t);else{el.textContent=orig;el._s=0}})()}
+ $$('.menu li a,.ex-card h3,.next .big,.f-nav a,.iname').forEach(el=>{el.setAttribute('data-scramble','');const host=el.closest('a,.ex-card,.icard')||el;host.addEventListener('pointerenter',()=>scr(el))})})();
+
+/* ---------- hero chain follows the pointer ---------- */
+if(has('#heroChain')&&!RM)(function(){const hero=$('.hero'),svg=$('#heroChain'),path=svg.querySelector('path'),cs=[...svg.querySelectorAll('circle')];if(!path||!cs.length)return;
+ const base=cs.map(c=>[+c.getAttribute('cx'),+c.getAttribute('cy')]),off=base.map(()=>0);let px=-1e4,py=0,act=false,raf=0;
+ hero.addEventListener('pointermove',e=>{const r=svg.getBoundingClientRect();px=(e.clientX-r.left)/r.width*1600;py=(e.clientY-r.top)/r.height*200;act=true;if(!raf)raf=requestAnimationFrame(tick)});
+ hero.addEventListener('pointerleave',()=>{act=false;if(!raf)raf=requestAnimationFrame(tick)});
+ function tick(){let moving=false,d='';base.forEach((b,i)=>{const dx=b[0]-px,dist=Math.abs(dx);const target=act&&dist<260?(1-dist/260)*(py<b[1]?60:-60)*Math.cos(dx/90):0;off[i]+=(target-off[i])*.14;if(Math.abs(target-off[i])>.3)moving=true;const y=b[1]+off[i];cs[i].setAttribute('cy',y.toFixed(1));d+=(i?'L':'M')+b[0]+' '+y.toFixed(1)});path.setAttribute('d',d);raf=moving||act?requestAnimationFrame(tick):0}})();
+
+/* ---------- inspiration flip cards ---------- */
+$$('.icard').forEach(c=>{const f=()=>{const on=c.classList.toggle('flip');c.setAttribute('aria-pressed',on)};c.addEventListener('click',e=>{if(e.target.closest('a'))return;f()});c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}})});
+
+/* ---------- polycomm network ---------- */
+if(has('#pcCanvas'))(function(){const box=$('#pcNet'),cv=$('#pcCanvas'),c=cv.getContext('2d');let W=0,H=0,dpr=1,N=[],mx=-999,my=-999,run=false,pulses=[];
+ const COL=['#1F8FFF','#F5F5F2','#929292'];
+ function size(){const r=box.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);if(!N.length)seed();draw()}
+ function node(x,y,t){return{x,y,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,t,r:t===0?4.5:3.5}}
+ function seed(){const n=Math.round(Math.max(24,Math.min(46,W*H/5000)));for(let i=0;i<n;i++)N.push(node(Math.random()*W,Math.random()*H,i%3));count()}
+ function count(){$('#pcCount').textContent=N.length+' members'}
+ function draw(){c.clearRect(0,0,W,H);const L=Math.max(95,Math.min(130,W/4));
+  for(let i=0;i<N.length;i++){const a=N[i];for(let j=i+1;j<N.length;j++){const b=N[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<L){c.strokeStyle=`rgba(120,140,170,${(1-d/L)*.35})`;c.lineWidth=1;c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke()}}
+   const dm=Math.hypot(a.x-mx,a.y-my);if(dm<L*1.4){c.strokeStyle=`rgba(31,143,255,${(1-dm/(L*1.4))*.9})`;c.lineWidth=1.3;c.beginPath();c.moveTo(a.x,a.y);c.lineTo(mx,my);c.stroke()}}
+  N.forEach(a=>{c.beginPath();c.arc(a.x,a.y,a.r,0,7);if(a.t===2){c.strokeStyle=COL[2];c.lineWidth=1.5;c.fillStyle='#0d0d10';c.fill();c.stroke()}else{c.fillStyle=COL[a.t];c.fill()}});
+  pulses=pulses.filter(p=>(p.k+=.025)<1);pulses.forEach(p=>{c.strokeStyle=`rgba(31,143,255,${1-p.k})`;c.lineWidth=2;c.beginPath();c.arc(p.x,p.y,6+p.k*60,0,7);c.stroke()});
+  if(mx>-900){c.fillStyle='#1F8FFF';c.beginPath();c.arc(mx,my,5,0,7);c.fill()}}
+ function step(){N.forEach(a=>{a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;const d=Math.hypot(a.x-mx,a.y-my);if(d<90&&d>0){a.vx+=(mx-a.x)/d*.012;a.vy+=(my-a.y)/d*.012}const s=Math.hypot(a.vx,a.vy);if(s>.9){a.vx*=.9/s;a.vy*=.9/s}});draw();if(run)requestAnimationFrame(step)}
+ box.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;if(RM)draw()});
+ box.addEventListener('pointerleave',()=>{mx=my=-999;if(RM)draw()});
+ box.addEventListener('click',e=>{const r=box.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;const t=N.length%3;N.push(node(x,y,t));if(N.length>90)N.shift();pulses.push({x,y,k:0});count();if(RM)draw()});
+ new IntersectionObserver(en=>{const v=en[0].isIntersecting;if(v&&!W)size();if(v&&!run&&!RM){run=true;requestAnimationFrame(step)}else if(!v)run=false}).observe(box);
+ addEventListener('resize',()=>{if(W)size()})})();
+
 /* ---------- polymer lab ---------- */
 if(has('#lab'))(function(){
  const MONO={PE:{name:'Polyethylene',m0:28.05,f:'[ –CH₂–CH₂– ]ₙ',side:null},PP:{name:'Polypropylene',m0:42.08,f:'[ –CH₂–CH(CH₃)– ]ₙ',side:'CH₃'},PVC:{name:'PVC',m0:62.50,f:'[ –CH₂–CHCl– ]ₙ',side:'Cl'},PS:{name:'Polystyrene',m0:104.15,f:'[ –CH₂–CH(C₆H₅)– ]ₙ',side:'Ph'}};
@@ -454,6 +497,8 @@ if(!hasG||RM){
   if(has('footer'))gsap.from('footer .f-big span',{yPercent:60,opacity:0,stagger:.12,duration:1,ease:'expo.out',scrollTrigger:{trigger:'footer',start:'top 85%'}});
   if(has('.explore'))gsap.from('.ex-card',{opacity:0,y:40,stagger:.07,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.explore',start:'top 85%'}});
   if(has('#lab'))gsap.from('#lab',{opacity:0,y:40,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'#lab',start:'top 85%'}});
+  if(has('#polycomm'))gsap.from('.pc',{opacity:0,y:40,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.pc',start:'top 85%'}});
+  if(has('.insp'))gsap.from('.icard',{opacity:0,y:50,rotateY:-12,stagger:.12,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.insp',start:'top 85%'}});
   addEventListener('load',()=>ScrollTrigger.refresh());
   document.fonts&&document.fonts.ready.then(()=>ScrollTrigger.refresh());
 }
