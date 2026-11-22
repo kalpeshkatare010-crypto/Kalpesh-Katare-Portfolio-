@@ -39,16 +39,12 @@ const RESOURCES = [
 const PROJECTS = [
  {g:"Software",n:"01",t:"JobFlow",cat:"SaaS · Product",d:"An offline-first production management app for small-scale manufacturers: job orders, workflow stages, production entries, inventory and reports, on the web and as an Android app. Live, with a 14-day free trial and ₹999/month plan.",tools:["React","TypeScript","Supabase","Cloudflare","Android (Capacitor)","Razorpay"],cover:"jobflow",role:"Product owner — idea, features, design and launch",year:"2026",out:"Live — <a href=\"https://jobflow.kalpeshkatare010.workers.dev\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--lime)\">open JobFlow ↗</a>. Web app, Android app with in-app updates, and online subscriptions."},
  {g:"Electronics",n:"02",t:"Smart RFID Door Lock",cat:"Electronics · Embedded",d:"An access-control prototype that reads RFID tags and keypad input, shows status on an LCD and switches a solenoid lock through a relay.",tools:["Arduino Uno","RFID RC522","Keypad","LCD","Relay","Solenoid lock"],cover:"rfid",role:"[Your role]",year:"[Year]",out:"[What you learned / result]"},
- {g:"Electronics",n:"03",t:"TARS Mini Robot",cat:"Robotics · Engineering",d:"A robotics and engineering build exploring mechanism, motion and control.",tools:["[Microcontroller]","[Motors / servos]","[Materials]"],cover:"robot",role:"[Your role]",year:"[Year]",out:"[What you learned / result]"},
- {g:"Design",n:"04",t:"Polyconnect",cat:"Editorial · Visual communication",d:"The departmental e-magazine of Plastic & Polymer Engineering — editorial design, typography and visual communication for Issue 01.",tools:["Editorial design","Typography","Layout"],cover:"mag",role:"[Your role]",year:"[Year]",out:"[Link to the issue]"},
- {g:"Events",n:"05",t:"Alpha AI Workshop",cat:"Events · Creative communication",d:"Involvement in an AI workshop — event promotion, poster and social creative, and communication.",tools:["Event promotion","Poster design","Social media"],cover:"ai",role:"[Your role]",year:"[Year]",out:"[Attendance / outcome]"}
+ {g:"Design",n:"03",t:"Polyconnect",cat:"Editorial · Visual communication",d:"The departmental e-magazine of Plastic & Polymer Engineering — editorial design, typography and visual communication for Issue 01.",tools:["Editorial design","Typography","Layout"],cover:"mag",role:"[Your role]",year:"[Year]",out:"[Link to the issue]"},
 ];
 
 const EXPERIENCE = [
- {w:"[Year]",s:"Club",h:"Rotaract Club",r:"Member",p:"Community service and club activities. [Add projects or initiatives you contributed to.]",tags:["Community","Leadership"]},
- {w:"[Year]",s:"Media",h:"Social Media Editor",r:"[Organisation]",p:"Planning and designing posts, editing visuals and keeping the channel's voice consistent. [Add scope.]",tags:["Content","Design","Editing"]},
  {w:"[Year]",s:"Campus",h:"College events",r:"Organising & creative team",p:"Supporting departmental and college events with promotion and on-ground coordination. [Name events.]",tags:["Events","Coordination"]},
- {w:"[Year]",s:"Learning",h:"Workshops",r:"Participant",p:"Including the Alpha AI Workshop. [List other technical workshops attended.]",tags:["AI","Technical"]},
+ {w:"[Year]",s:"Learning",h:"Workshops",r:"Participant",p:"[List technical workshops attended.]",tags:["Technical"]},
  {w:"Ongoing",s:"Practice",h:"Creative & technical work",r:"Self-directed",p:"Electronics builds, editorial design for Polyconnect and hands-on print production.",tags:["Arduino","Editorial","Print"]}
 ];
 
