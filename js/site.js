@@ -278,7 +278,7 @@ $('#tl').insertAdjacentHTML('beforeend',EXPERIENCE.map(x=>`<div class="tli"><spa
 const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2600)};
 async function copy(v){try{await navigator.clipboard.writeText(v);toast('Copied: '+v)}catch(e){toast(v)}}
 $('#magnet').addEventListener('click',()=>copy($('[data-copy]').dataset.copy));
-$$('.c-link').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(a.dataset.copy)copy(a.dataset.copy);else toast(a.dataset.ph+' link is a placeholder — add yours in the CONTENT block')}));
+$$('.c-link').forEach(a=>a.addEventListener('click',e=>{if(a.dataset.copy){e.preventDefault();copy(a.dataset.copy)}else if(a.dataset.ph){e.preventDefault();toast(a.dataset.ph+' link is a placeholder')}}));
 $('#pdfBtn').addEventListener('click',e=>{e.preventDefault();toast('PDF placeholder — upload your review and link it here')});
 
 /* ---------- cursor ---------- */
