@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Print — Kalpesh Katare</title>
+<meta name="description" content="Hands-on print production and an interactive CMYK halftone.">
+<meta name="theme-color" content="#0B0B0D">
+<script>try{if(sessionStorage.getItem('kkv'))document.documentElement.classList.add('nl')}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div id="loader" aria-hidden="true">
+  <div class="ld-top"><span class="eyebrow">Kalpesh Katare — Portfolio</span><span class="eyebrow">Polymerising<span class="lime" id="ld-dots">…</span></span></div>
+  <svg class="ld-chain" viewBox="0 0 520 120" fill="none" aria-hidden="true"><path id="ld-path" d="M0 60 L40 30 L80 60 L120 30 L160 60 L200 30 L240 60 L280 30 L320 60 L360 30 L400 60 L440 30 L480 60 L520 30" stroke="#1F8FFF" stroke-width="2"/><g id="ld-atoms"></g></svg>
+  <div>
+    <div class="ld-count"><span id="ld-n">0</span><sup>%</sup></div>
+    <div class="ld-bar"><i id="ld-bar"></i></div>
+  </div>
+</div>
+<div class="ld-shutter" id="shutter"></div>
+<div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="cur-ring" id="curR" aria-hidden="true"><span class="lbl" id="curL">VIEW</span></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="logo" aria-label="Kalpesh Katare, back to top"><em>Kalpesh</em>Katare</a>
+  <div class="nav-r">
+    <a href="contact.html" class="btn btn-lime" data-hover="SAY HI">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>Contact</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span class="b"><span></span><span></span></span></button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Main">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="print.html" aria-current="page">Print</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ol>
+  <div class="menu-aside">
+    <img class="portrait-sm" src="img/portrait-bw.webp" alt="Black-and-white portrait of Kalpesh Katare" loading="lazy" width="720" height="960">
+    <div><div class="eyebrow">Based in</div>Chhatrapati Sambhajinagar, Maharashtra, India</div>
+    <div><div class="eyebrow">Studying</div>B.Tech, Plastic &amp; Polymer Engineering — MIT</div>
+  </div>
+</nav>
+
+<main id="main">
+<!-- PRINT -->
+<section class="sec wrap page-first print" id="print" aria-labelledby="print-h">
+  <p class="eyebrow crumb"><a href="index.html">Kalpesh Katare</a><span>/</span><b>Print</b></p>
+  <div class="sec-head"><span class="sec-num">01</span><h2 class="big" id="print-h"><span class="line-mask"><span>The art</span></span><span class="line-mask"><span>of print.</span></span></h2></div>
+  <div class="print-grid">
+    <div class="halftone" id="halftone" role="img" aria-label="Interactive CMYK halftone: move across it to shift the colour separation; toggle each ink with the buttons">
+      <canvas id="htCanvas"></canvas>
+      <span class="ht-hint">Move · CMYK separation</span>
+      <div class="ht-ui" role="group" aria-label="Toggle inks"><button data-c="c" aria-pressed="true" aria-label="Cyan">C</button><button data-c="m" aria-pressed="true" aria-label="Magenta">M</button><button data-c="y" aria-pressed="true" aria-label="Yellow">Y</button><button data-c="k" aria-pressed="true" aria-label="Black">K</button></div>
+    </div>
+    <div class="print-copy">
+      <p class="eyebrow" style="margin-bottom:14px">Practical exposure · <span class="ph" style="color:#0B0B0D;border-color:#0B0B0D">[print shop / studio name]</span></p>
+      <p style="font-family:var(--grot);font-size:clamp(20px,2vw,26px);line-height:1.25;color:#0B0B0D">Printing is materials engineering you can hold: ink films on paper, PVC vinyl, BOPP laminates and PET — every job is a lesson in substrates.</p>
+      <p>I've worked hands-on with print operations — from preparing artwork and separations in prepress, to running jobs through digital and offset workflows, cutting vinyl, laminating and finishing.</p>
+      <div class="tools"><span class="tool"><i style="background:#0b9a3c">Cd</i>CorelDRAW</span><span class="tool"><i style="background:#001e36;color:#31a8ff">Ps</i>Photoshop</span></div>
+    </div>
+    <div class="press-list" id="pressList"></div>
+    <div class="cmyk-bar" aria-hidden="true"><i style="background:#00AEEF"></i><i style="background:#EC008C"></i><i style="background:#FFF200"></i><i style="background:#111"></i><i style="background:var(--lime)"></i></div>
+  </div>
+</section>
+</main>
+<a class="next" href="contact.html" data-hover="NEXT"><div><p class="eyebrow" style="margin-bottom:12px">Next page</p><p class="big">Contact</p></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+
+<div class="proj-float" id="projFloat" aria-hidden="true"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <div class="scrim" data-close></div>
+  <div class="dpanel"><button class="dclose" data-close aria-label="Close details"><svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <span class="eyebrow" id="dCat"></span><h3 id="dTitle"></h3><div class="dcover" id="dCover"></div><p id="dDesc" style="color:#d5d5d0;font-size:16px"></p><dl id="dList"></dl></div>
+</div>
+
+<footer>
+  <svg class="topo" data-topo="12" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="opacity:.6"></svg>
+  <p class="f-big"><span>Curious by nature.</span><span class="lime">Engineered by experience.</span></p>
+  <nav class="f-nav" aria-label="Footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="projects.html">Projects</a><a href="print.html">Print</a><a href="contact.html">Contact</a></nav>
+  <div class="f-bot"><span>© <span id="yr"></span> Kalpesh Katare</span><span>Chhatrapati Sambhajinagar, India</span><a href="#top" data-link>Back to top ↑</a></div>
+  <p class="credits">Imagery: portraits © Kalpesh Katare. All scientific plates, diagrams and textures are original renders made for this site; curves are illustrative, not measured data. No journal figures are reproduced.</p>
+</footer>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
