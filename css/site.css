@@ -492,3 +492,16 @@ html.nl .wipe i{transform:scaleY(1);animation:wipeSafe 0s 2.5s forwards}
 .icard:hover .iphoto img{transform:scale(1.05)}
 .icard:hover .iphoto::before{opacity:.35}
 .iface .irole{margin-top:4px}
+/* CV download */
+.ex-card.cv-card{grid-column:1/-1;min-height:0;flex-direction:row;align-items:center;justify-content:space-between;gap:clamp(20px,4vw,60px);padding:clamp(24px,3.5vw,44px);padding-bottom:0}
+.cv-copy{display:grid;gap:14px;align-self:center;padding-bottom:clamp(24px,3.5vw,44px)}
+.cv-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.cv-sheet{flex:none;width:clamp(190px,24vw,300px);align-self:flex-end;transform:translateY(18%) rotate(-4deg);transition:transform .6s cubic-bezier(.2,.7,.1,1);box-shadow:0 30px 60px rgba(0,0,0,.55)}
+.cv-sheet img{display:block;width:100%;height:auto;border-radius:4px 4px 0 0}
+.cv-card:hover .cv-sheet{transform:translateY(6%) rotate(0)}
+.menu-cv{display:inline-flex;align-items:center;gap:8px;color:var(--lime);font:600 12px var(--grot);letter-spacing:.1em;text-transform:uppercase}
+.menu-cv svg{width:15px;height:15px}
+.c-cv{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:28px}
+.c-cv b{font-family:var(--grot);font-size:clamp(18px,1.8vw,24px);font-weight:600}
+.c-cv p{color:var(--tx2);font-size:14px;margin-top:4px}
+@media (max-width:760px){.ex-card.cv-card{flex-direction:column;align-items:flex-start}.cv-copy{padding-bottom:0}.cv-sheet{align-self:center;width:62%;transform:translateY(12%) rotate(-3deg)}.ex-card.cv-card div{margin-top:0}}
