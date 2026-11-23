@@ -416,7 +416,7 @@ html.nl .wipe i{transform:scaleY(1);animation:wipeSafe 0s 2.5s forwards}
 .lab{display:grid;grid-template-columns:1.5fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .lab-stage{position:relative;min-height:340px;background:#0d0d10;cursor:pointer;border-right:1px solid var(--line);touch-action:manipulation}
 .lab-stage svg{position:absolute;inset:0;width:100%;height:100%}
-.lab-stage .hint{position:absolute;left:18px;bottom:16px;font:500 11px var(--grot);letter-spacing:.14em;color:var(--tx2);text-transform:uppercase;pointer-events:none}
+.lab-stage .hint{position:absolute;left:18px;bottom:16px;font:500 11px var(--grot);letter-spacing:.14em;color:var(--tx2);text-transform:uppercase}
 .lab-stage .u{transform-box:fill-box;transform-origin:center}
 .lab-stage .u.new{animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
 @keyframes pop{from{transform:scale(0);opacity:0}}
@@ -457,7 +457,7 @@ html.nl .wipe i{transform:scaleY(1);animation:wipeSafe 0s 2.5s forwards}
 .pc-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:middle}
 .pc-net{position:relative;min-height:380px;background:#0d0d10;border-left:1px solid var(--line);cursor:crosshair;touch-action:pan-y}
 .pc-net canvas{position:absolute;inset:0;width:100%;height:100%}
-.pc-net .hint{position:absolute;left:18px;bottom:16px;font:500 11px var(--grot);letter-spacing:.14em;color:var(--tx2);text-transform:uppercase;pointer-events:none}
+.pc-net .hint{position:absolute;left:18px;bottom:16px;font:500 11px var(--grot);letter-spacing:.14em;color:var(--tx2);text-transform:uppercase}
 .pc-net .count{position:absolute;right:18px;top:16px;font:600 11px var(--grot);letter-spacing:.14em;color:var(--lime);text-transform:uppercase;pointer-events:none}
 @media (max-width:900px){.pc{grid-template-columns:1fr}.pc-net{border-left:0;border-top:1px solid var(--line);min-height:300px}}
 .insp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -505,3 +505,31 @@ html.nl .wipe i{transform:scaleY(1);animation:wipeSafe 0s 2.5s forwards}
 .c-cv b{font-family:var(--grot);font-size:clamp(18px,1.8vw,24px);font-weight:600}
 .c-cv p{color:var(--tx2);font-size:14px;margin-top:4px}
 @media (max-width:760px){.ex-card.cv-card{flex-direction:column;align-items:flex-start}.cv-copy{padding-bottom:0}.cv-sheet{align-self:center;width:62%;transform:translateY(12%) rotate(-3deg)}.ex-card.cv-card div{margin-top:0}}
+/* CV — header button */
+.nav-cv{height:46px;display:inline-flex;align-items:center;gap:8px;padding:0 14px 0 12px;border:1px solid var(--line);border-radius:8px;background:rgba(11,11,13,.55);backdrop-filter:blur(6px);font:700 13px var(--grot);letter-spacing:.08em;color:var(--tx);transition:border-color .3s,color .3s}
+.nav-cv .i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(31,143,255,.14);color:var(--lime);overflow:hidden;transition:background .3s,color .3s}
+.nav-cv .i svg{width:13px;height:13px}
+.nav-cv:hover{border-color:var(--lime);color:var(--lime)}
+.nav-cv:hover .i{background:var(--lime);color:#000}
+.nav-cv:hover .i svg{animation:cvDrop .7s cubic-bezier(.6,0,.3,1)}
+@keyframes cvDrop{0%{transform:translateY(0)}45%{transform:translateY(140%)}46%{transform:translateY(-140%)}100%{transform:translateY(0)}}
+@media (max-width:420px){.nav-cv{width:46px;padding:0;justify-content:center}.nav-cv .t{display:none}.nav-cv .i{background:none;width:auto;height:auto}.nav-cv .i svg{width:18px;height:18px}}
+/* CV — footer badge */
+.f-head{position:relative}
+.f-cv{position:absolute;right:0;bottom:0;width:clamp(150px,14vw,200px);aspect-ratio:1;display:grid;place-items:center;border-radius:50%;isolation:isolate}
+.f-cv .ring{position:absolute;inset:0;width:100%;height:100%;animation:cvSpin 16s linear infinite}
+.f-cv .ring text{font:600 14px var(--grot);letter-spacing:.12em;fill:var(--tx)}
+.f-cv .core{width:46%;aspect-ratio:1;border-radius:50%;background:var(--lime);color:#000;display:grid;place-items:center;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.1,1);box-shadow:0 0 0 0 rgba(31,143,255,.45);animation:cvPulse 2.8s ease-out infinite}
+.f-cv .core svg{width:42%;height:42%}
+.f-cv:hover .ring{animation-duration:4s}
+.f-cv:hover .ring text{fill:var(--lime)}
+.f-cv:hover .core{transform:scale(1.12)}
+.f-cv:hover .core svg{animation:cvDrop .7s cubic-bezier(.6,0,.3,1)}
+@keyframes cvSpin{to{transform:rotate(360deg)}}
+@keyframes cvPulse{0%{box-shadow:0 0 0 0 rgba(31,143,255,.45)}70%,100%{box-shadow:0 0 0 18px rgba(31,143,255,0)}}
+@media (prefers-reduced-motion:reduce){.f-cv .ring,.f-cv .core{animation:none}}
+.f-cv-cap{display:none}
+@media (max-width:760px){.f-head{display:flex;flex-direction:column}.f-cv{position:relative;width:104px;margin-top:30px}.f-head{flex-direction:column}
+.f-cv-cap{display:block;position:absolute;left:calc(100% + 20px);top:50%;transform:translateY(-50%);white-space:nowrap;font:500 12px/1.5 var(--grot);letter-spacing:.06em;color:var(--tx2);text-transform:uppercase}
+.f-cv-cap b{display:block;color:var(--tx);font-weight:700;font-size:14px;letter-spacing:.08em}}
+@media (max-width:380px){.f-cv{width:92px}.f-cv-cap{left:calc(100% + 14px);font-size:10.5px;letter-spacing:.04em}.f-cv-cap b{font-size:12.5px;letter-spacing:.05em}}
