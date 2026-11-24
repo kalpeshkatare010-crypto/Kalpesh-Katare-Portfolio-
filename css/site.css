@@ -593,3 +593,5 @@ html[data-theme="light"] .hey{color:#0B0B0D}
 html[data-theme="light"] .hero-name .big{color:#1F8FFF}
 html[data-theme="light"] .hero-portrait img{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22%);mask-image:linear-gradient(to right,transparent 0,#000 22%)}
 html[data-theme="light"] .pc-legend i[style*="F5F5F2"]{background:#0B0B0D!important}
+@media (max-width:560px){.nav-r{gap:8px}.nav-r .btn-lime{font-size:0;gap:0;padding:0;width:44px;height:44px;justify-content:center}.nav-r .btn-lime svg{width:19px;height:19px}.nav-r .nav-cv,.nav-r .theme-btn,.nav-r .menu-btn{width:44px;height:44px}.nav-r .nav-cv{padding:0;justify-content:center}.nav-r .nav-cv .t{display:none}.nav-r .nav-cv .i{background:none;width:auto;height:auto}.nav-r .nav-cv .i svg{width:18px;height:18px}}
+@media (max-width:340px){.nav-r{gap:6px}.nav-r .btn-lime,.nav-r .nav-cv,.nav-r .theme-btn,.nav-r .menu-btn{width:40px;height:40px}}
