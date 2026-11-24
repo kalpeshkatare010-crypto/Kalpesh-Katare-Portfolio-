@@ -533,3 +533,23 @@ html.nl .wipe i{transform:scaleY(1);animation:wipeSafe 0s 2.5s forwards}
 .f-cv-cap{display:block;position:absolute;left:calc(100% + 20px);top:50%;transform:translateY(-50%);white-space:nowrap;font:500 12px/1.5 var(--grot);letter-spacing:.06em;color:var(--tx2);text-transform:uppercase}
 .f-cv-cap b{display:block;color:var(--tx);font-weight:700;font-size:14px;letter-spacing:.08em}}
 @media (max-width:380px){.f-cv{width:92px}.f-cv-cap{left:calc(100% + 14px);font-size:10.5px;letter-spacing:.04em}.f-cv-cap b{font-size:12.5px;letter-spacing:.05em}}
+
+/* ===== Kapsify card: the app's own theme ===== */
+.kp-spin{transform-box:fill-box;transform-origin:center;animation:kpSpin 3.6s linear infinite}
+@keyframes kpSpin{to{transform:rotate(360deg)}}
+.proj.kp{--lime:#D5FF36;background:#080808;border:1px solid #292929;border-radius:18px;padding:22px 24px;margin:18px 0;grid-template-columns:70px 1.1fr 1fr 300px;overflow:hidden;transition:border-color .4s,box-shadow .4s}
+.proj.kp::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 50%,rgba(213,255,54,.10),transparent 70%);pointer-events:none}
+.proj.kp:hover{border-color:#D5FF36;box-shadow:0 0 0 1px #D5FF36,0 18px 60px -20px rgba(213,255,54,.35)}
+.proj.kp .pn{color:#D5FF36}
+.proj.kp .pt{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;letter-spacing:-.035em;text-transform:none}
+.proj.kp .pd{color:#a0a0a0}
+.proj.kp .tag{border-color:#292929;color:#d6d6d0}
+.proj.kp .pcover-m{display:block;grid-column:4;grid-row:1/span 2;aspect-ratio:4/3;border:1px solid #292929;border-radius:12px;position:relative;overflow:hidden;background:#080808}
+.proj.kp .pcover-m svg{position:absolute;inset:0;width:100%;height:100%}
+.proj.kp .pc{grid-column:2/4;justify-self:start;flex-direction:row;flex-wrap:wrap}
+.proj.kp:hover .kp-spin{animation-duration:1.4s}
+.drawer.kp{--lime:#D5FF36}
+.drawer.kp .dpanel{background:#080808;border-left-color:#292929}
+.drawer.kp #dTitle{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;letter-spacing:-.035em;text-transform:none}
+@media (max-width:900px){.proj.kp{grid-template-columns:1fr;padding:18px}.proj.kp .pcover-m{grid-column:auto;grid-row:auto;aspect-ratio:16/10}.proj.kp .pc{grid-column:auto}}
+@media (prefers-reduced-motion:reduce){.kp-spin{animation:none}}
