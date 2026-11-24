@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kalpeshkatare010-crypto.github.io/sitemap.xml
+Sitemap: https://kalpeshkatare.in/sitemap.xml
