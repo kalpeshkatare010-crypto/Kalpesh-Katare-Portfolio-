@@ -553,3 +553,43 @@ html.nl .wipe i{transform:scaleY(1);animation:wipeSafe 0s 2.5s forwards}
 .drawer.kp #dTitle{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;letter-spacing:-.035em;text-transform:none}
 @media (max-width:900px){.proj.kp{grid-template-columns:1fr;padding:18px}.proj.kp .pcover-m{grid-column:auto;grid-row:auto;aspect-ratio:16/10}.proj.kp .pc{grid-column:auto}}
 @media (prefers-reduced-motion:reduce){.kp-spin{animation:none}}
+
+/* ===== light mode ===== */
+.theme-btn{width:46px;height:46px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;color:var(--tx);background:rgba(11,11,13,.55);backdrop-filter:blur(6px);transition:border-color .3s,color .3s}
+.theme-btn:hover{border-color:var(--lime);color:var(--lime)}
+.theme-btn svg{width:20px;height:20px}
+.theme-btn .sun{display:none}
+html[data-theme="light"] .theme-btn .sun{display:block}
+html[data-theme="light"] .theme-btn .moon{display:none}
+html.theme-anim body,html.theme-anim body *{transition:background-color .45s,color .45s,border-color .45s!important}
+html[data-theme="light"]{--bg:#F3F3EF;--tx:#0B0B0D;--tx2:#5d5d62;--line:#d8d8d2;--lime:#0A6CF0;--paper:#E4E4DD;color-scheme:light}
+html[data-theme="light"] .menu-btn span{background:#fff}
+html[data-theme="light"] .nav.solid{background:linear-gradient(var(--bg),rgba(243,243,239,0))}
+html[data-theme="light"] .nav-cv,html[data-theme="light"] .theme-btn{background:rgba(255,255,255,.6)}
+html[data-theme="light"] .about-copy p,html[data-theme="light"] .mat-intro p,html[data-theme="light"] .acc .ac,html[data-theme="light"] .istory,html[data-theme="light"] .p-sum,html[data-theme="light"] .tli p,html[data-theme="light"] .drawer dd{color:#36363b}
+html[data-theme="light"] .plate{background:#fff}
+html[data-theme="light"] .plate .badge{background:rgba(255,255,255,.85)}
+html[data-theme="light"] .drawer .dpanel{background:#fff}
+html[data-theme="light"] .ex-card{background:#fff}
+html[data-theme="light"] .ex-card.feat .cover,html[data-theme="light"] .lab-stage,html[data-theme="light"] .pc-net,html[data-theme="light"] .plate .viz,html[data-theme="light"] .feature .f-viz,html[data-theme="light"] .proj-float,html[data-theme="light"] .proj .pcover-m{--tx:#F5F5F2;--tx2:#929292;--line:#292929}
+html[data-theme="light"] .iface.front{background:#fff}
+html[data-theme="light"] .iphoto::after{background:linear-gradient(180deg,transparent 55%,rgba(255,255,255,.92))}
+html[data-theme="light"] .iface .topo path{opacity:.18}
+html[data-theme="light"] .iface.back{color:#fff}
+html[data-theme="light"] .iface.back .eyebrow{color:rgba(255,255,255,.75)}
+html[data-theme="light"] .iface.back .iflip{border-color:#fff;color:#fff}
+html[data-theme="light"] .next:hover .big,html[data-theme="light"] .next:hover .eyebrow{color:#fff}
+html[data-theme="light"] .next:hover .arr{background:#fff;border-color:#fff}
+html[data-theme="light"] .toast{color:#fff}
+/* Kapsify keeps its own dark app theme in both modes */
+html[data-theme="light"] .proj.kp,html[data-theme="light"] .drawer.kp{--tx:#ffffff;--tx2:#a0a0a0;--line:#292929;--lime:#D5FF36}
+html[data-theme="light"] .proj.kp{color:#fff}
+html[data-theme="light"] .drawer.kp .dpanel{background:#080808;color:#fff}
+html[data-theme="light"] .drawer.kp dd{color:#d6d6d0}
+.pc-logo-l{display:none}
+html[data-theme="light"] .pc-logo{display:none}
+html[data-theme="light"] .pc-logo-l{display:block}
+html[data-theme="light"] .hey{color:#0B0B0D}
+html[data-theme="light"] .hero-name .big{color:#1F8FFF}
+html[data-theme="light"] .hero-portrait img{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22%);mask-image:linear-gradient(to right,transparent 0,#000 22%)}
+html[data-theme="light"] .pc-legend i[style*="F5F5F2"]{background:#0B0B0D!important}

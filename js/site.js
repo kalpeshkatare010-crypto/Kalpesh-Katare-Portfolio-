@@ -512,3 +512,12 @@ if(!hasG||RM){
   addEventListener('load',()=>ScrollTrigger.refresh());
   document.fonts&&document.fonts.ready.then(()=>ScrollTrigger.refresh());
 }
+
+/* ---------- light / dark mode ---------- */
+(function(){const root=document.documentElement,btn=document.getElementById('themeBtn');if(!btn)return;
+ const meta=document.querySelector('meta[name="theme-color"]');
+ const set=(t,save)=>{root.setAttribute('data-theme',t);btn.setAttribute('aria-pressed',t==='light');btn.setAttribute('aria-label',t==='light'?'Switch to dark mode':'Switch to light mode');if(meta)meta.content=t==='light'?'#F3F3EF':'#0B0B0D';if(save)try{localStorage.setItem('kk-theme',t)}catch(e){}};
+ set(root.getAttribute('data-theme')||'dark');
+ btn.addEventListener('click',()=>{root.classList.add('theme-anim');set(root.getAttribute('data-theme')==='light'?'dark':'light',true);setTimeout(()=>root.classList.remove('theme-anim'),600)});
+ try{matchMedia('(prefers-color-scheme: light)').addEventListener('change',e=>{if(!localStorage.getItem('kk-theme'))set(e.matches?'light':'dark')})}catch(e){}
+})();
