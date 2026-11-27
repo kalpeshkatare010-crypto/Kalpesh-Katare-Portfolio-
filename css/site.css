@@ -595,3 +595,32 @@ html[data-theme="light"] .hero-portrait img{-webkit-mask-image:linear-gradient(t
 html[data-theme="light"] .pc-legend i[style*="F5F5F2"]{background:#0B0B0D!important}
 @media (max-width:560px){.nav-r{gap:8px}.nav-r .btn-lime{font-size:0;gap:0;padding:0;width:44px;height:44px;justify-content:center}.nav-r .btn-lime svg{width:19px;height:19px}.nav-r .nav-cv,.nav-r .theme-btn,.nav-r .menu-btn{width:44px;height:44px}.nav-r .nav-cv{padding:0;justify-content:center}.nav-r .nav-cv .t{display:none}.nav-r .nav-cv .i{background:none;width:auto;height:auto}.nav-r .nav-cv .i svg{width:18px;height:18px}}
 @media (max-width:340px){.nav-r{gap:6px}.nav-r .btn-lime,.nav-r .nav-cv,.nav-r .theme-btn,.nav-r .menu-btn{width:40px;height:40px}}
+
+/* ===== Paper Build card: the app's own cream, ink and orange theme, with Pia ===== */
+.mascot *{transform-box:view-box}
+.pb-float{animation:pbFloat 5s ease-in-out infinite}
+@keyframes pbFloat{50%{transform:translateY(-4px)}}
+.proj.pb .m-point .ml,.drawer.pb .m-point .ml{transform-origin:70px 142px;animation:pbOffer 2.4s ease-in-out infinite}
+@keyframes pbOffer{50%{transform:rotate(-6deg)}}
+.proj.pb{--lime:#f47a3c;--tx:#2a2620;--tx2:#6f6756;--line:#d6ccb6;color:#2a2620;background:#f6efe1;border:1px solid #d6ccb6;border-radius:18px;padding:22px 24px;margin:18px 0;grid-template-columns:70px 1.1fr 1fr 300px;overflow:hidden;transition:border-color .4s,box-shadow .4s,transform .4s}
+.proj.pb::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 45%,rgba(244,122,60,.14),transparent 70%);pointer-events:none}
+.proj.pb:hover{border-color:#f47a3c;box-shadow:0 0 0 1px #f47a3c,0 18px 60px -22px rgba(244,122,60,.45)}
+.proj.pb .pn{color:#f47a3c}
+.proj.pb .pt{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em;text-transform:none;color:#2a2620}
+.proj.pb .pd{color:#6f6756}
+.proj.pb .tag{border-color:#d6ccb6;color:#2a2620;background:#fbf7ee}
+.proj.pb .pcover-m{display:block;grid-column:4;grid-row:1/span 2;aspect-ratio:4/3;border:1px solid #d6ccb6;border-radius:12px;position:relative;overflow:hidden;background:#f6efe1}
+.proj.pb .pcover-m svg{position:absolute;inset:0;width:100%;height:100%}
+.proj.pb .pc{grid-column:2/4;justify-self:start;flex-direction:row;flex-wrap:wrap}
+.drawer.pb{--lime:#f47a3c;--tx:#2a2620;--tx2:#6f6756;--line:#d6ccb6}
+.drawer.pb .dpanel{background:#f6efe1;border-left-color:#d6ccb6;color:#2a2620}
+.drawer.pb #dTitle{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em;text-transform:none;color:#2a2620}
+.drawer.pb #dDesc{color:#4a443a!important}
+.drawer.pb dd{color:#2a2620}
+.drawer.pb .dclose{color:#2a2620;border-color:#d6ccb6}
+@media (max-width:900px){.proj.pb{grid-template-columns:1fr;padding:18px}.proj.pb .pcover-m{grid-column:auto;grid-row:auto;aspect-ratio:16/10}.proj.pb .pc{grid-column:auto}}
+@media (prefers-reduced-motion:reduce){.pb-float,.proj.pb .m-point .ml,.drawer.pb .m-point .ml{animation:none}}
+/* Paper Build keeps its own light theme in both modes */
+html[data-theme="light"] .proj.pb,html[data-theme="light"] .drawer.pb{--tx:#2a2620;--tx2:#6f6756;--line:#d6ccb6;--lime:#f47a3c}
+html[data-theme="light"] .proj.pb .pcover-m{--tx:#2a2620;--tx2:#6f6756;--line:#d6ccb6}
+html[data-theme="light"] .drawer.pb .dpanel{background:#f6efe1}
