@@ -624,3 +624,4 @@ html[data-theme="light"] .pc-legend i[style*="F5F5F2"]{background:#0B0B0D!import
 html[data-theme="light"] .proj.pb,html[data-theme="light"] .drawer.pb{--tx:#2a2620;--tx2:#6f6756;--line:#d6ccb6;--lime:#f47a3c}
 html[data-theme="light"] .proj.pb .pcover-m{--tx:#2a2620;--tx2:#6f6756;--line:#d6ccb6}
 html[data-theme="light"] .drawer.pb .dpanel{background:#f6efe1}
+@media (orientation:portrait) and (min-width:761px){.hero{min-height:min(100svh,125vw)}}
