@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kalpeshkatare.in/</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://kalpeshkatare.in/about.html</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://kalpeshkatare.in/projects.html</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://kalpeshkatare.in/materials.html</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://kalpeshkatare.in/print.html</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://kalpeshkatare.in/contact.html</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/about.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/projects.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/project-paperbuild.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/project-jobflow.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/project-kapsify.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/project-polycomm.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/project-rfid.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/project-polyconnect.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/materials.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/print.html</loc><lastmod>2026-11-29</lastmod></url>
+  <url><loc>https://kalpeshkatare.in/contact.html</loc><lastmod>2026-11-29</lastmod></url>
 </urlset>
