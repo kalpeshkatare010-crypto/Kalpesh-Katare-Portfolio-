@@ -625,3 +625,4 @@ html[data-theme="light"] .proj.pb,html[data-theme="light"] .drawer.pb{--tx:#2a26
 html[data-theme="light"] .proj.pb .pcover-m{--tx:#2a2620;--tx2:#6f6756;--line:#d6ccb6}
 html[data-theme="light"] .drawer.pb .dpanel{background:#f6efe1}
 @media (orientation:portrait) and (min-width:761px){.hero{min-height:min(100svh,125vw)}}
+.hero-portrait .hp-reveal{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
