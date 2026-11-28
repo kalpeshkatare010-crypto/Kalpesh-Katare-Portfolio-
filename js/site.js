@@ -476,7 +476,7 @@ if(!hasG||RM){
   // staggered paragraphs
   $$('.reveal-lines').forEach(el=>{const w=splitWords(el);gsap.from(w,{yPercent:60,opacity:0,duration:.9,stagger:.018,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 82%'}})});
   if(has('.panels'))gsap.from('.panel',{opacity:0,y:30,stagger:.07,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.panels',start:'top 82%'}});
-  if(has('.panels'))gsap.fromTo('.sig-small',{strokeDasharray:400,strokeDashoffset:400},{strokeDashoffset:0,duration:2,ease:'power2.inOut',scrollTrigger:{trigger:'.panels',start:'top 70%'}});
+  if(has('.panels')){const sg=$('.sig-small'),sgl=sg.getTotalLength();gsap.fromTo(sg,{strokeDasharray:sgl,strokeDashoffset:sgl},{strokeDashoffset:0,duration:3,ease:'power2.inOut',scrollTrigger:{trigger:'.panels',start:'top 70%'}})}
   // manifesto scrub
   if(has('.manifesto'))gsap.to(words,{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:'.manifesto',start:'top 70%',end:'bottom 60%',scrub:true}});
   if(has('.manifesto'))gsap.from('.manifesto .seal',{rotate:-180,opacity:0,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:'.manifesto',start:'top 80%'}});
