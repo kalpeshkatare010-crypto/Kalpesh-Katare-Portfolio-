@@ -71,19 +71,19 @@ function topo(svg,seed=3,cx=.7,cy=.45){
     out+=`<path d="${d}Z"/>`;}
   svg.innerHTML=out;
 }
-if(has('#heroTopo'))topo($('#heroTopo'),5,.72,.5);
+topo($('#heroTopo'),5,.72,.5);
 $$('[data-topo]').forEach(s=>topo(s,+s.dataset.topo,.6,.6));
 
 /* ---------- hero molecular chain ---------- */
-(function(){const s=$('#heroChain');if(!s)return;let d='',atoms='';const n=34;
- for(let i=0;i<=n;i++){const x=i/n*1600,y=i%2?60:140;d+=(i?'L':'M')+x+' '+y;atoms+=`<circle cx="${x}" cy="${y}" r="${i%5===0?7:4}" fill="${i%5===0?'currentColor':'#0B0B0D'}" stroke="currentColor" stroke-width="1.5"/>`;}
- s.innerHTML=`<path id="hcPath" d="${d}" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".75"/><g id="hcAtoms" opacity=".95">${atoms}</g>`;})();
+(function(){const s=$('#heroChain');let d='',atoms='';const n=34;
+ for(let i=0;i<=n;i++){const x=i/n*1600,y=i%2?60:140;d+=(i?'L':'M')+x+' '+y;atoms+=`<circle cx="${x}" cy="${y}" r="${i%5===0?7:4}" fill="${i%5===0?'#1F8FFF':'#0B0B0D'}" stroke="#1F8FFF" stroke-width="1.5"/>`;}
+ s.innerHTML=`<path id="hcPath" d="${d}" fill="none" stroke="#1F8FFF" stroke-width="1.5" opacity=".75"/><g id="hcAtoms" opacity=".95">${atoms}</g>`;})();
 
 /* ---------- loader chain atoms ---------- */
-(function(){let a='';for(let i=0;i<14;i++){a+=`<circle cx="${i*40}" cy="${i%2?30:60}" r="5" fill="#0B0B0D" stroke="currentColor" stroke-width="2"/>`}$('#ld-atoms').innerHTML=a;})();
+(function(){let a='';for(let i=0;i<14;i++){a+=`<circle cx="${i*40}" cy="${i%2?30:60}" r="5" fill="#0B0B0D" stroke="#1F8FFF" stroke-width="2"/>`}$('#ld-atoms').innerHTML=a;})();
 
 /* ---------- small svg helpers ---------- */
-const G='currentColor',T='#F5F5F2',M='#929292',L='#292929';
+const G='#1F8FFF',T='#F5F5F2',M='#929292',L='#292929';
 function axes(xl,yl){return `<g stroke="${L}" stroke-width="1" fill="none"><path d="M50 30 V260 H375"/>${[0,1,2,3,4].map(i=>`<path d="M50 ${30+i*57.5} H375" opacity=".5" stroke-dasharray="2 4"/>`).join('')}</g><g fill="${M}" font-family="Space Grotesk" font-size="10" letter-spacing=".08em"><text x="212" y="290" text-anchor="middle">${xl}</text><text x="18" y="145" transform="rotate(-90 18 145)" text-anchor="middle">${yl}</text></g>`}
 function lbl(x,y,t,c=T,a='start'){return `<text x="${x}" y="${y}" fill="${c}" font-family="Space Grotesk" font-size="10.5" text-anchor="${a}">${t}</text>`}
 const DRAW={
@@ -134,7 +134,7 @@ const CANVAS={
   for(const p of P){c.save();c.translate(p.x,p.y);c.rotate(p.a);const rx=p.s,ry=p.s*.72;
    c.shadowColor='rgba(0,0,0,.6)';c.shadowBlur=12*W/520;c.shadowOffsetY=5*W/520;
    const g=c.createRadialGradient(-rx*.35,-ry*.45,1,0,0,rx*1.1);
-   if(p.lime){g.addColorStop(0,'#d6eaff');g.addColorStop(.35,'#bdbdbd');g.addColorStop(1,'#3d5200')}
+   if(p.lime){g.addColorStop(0,'#d6eaff');g.addColorStop(.35,'#1F8FFF');g.addColorStop(1,'#3d5200')}
    else{const b=200+p.k*40|0;g.addColorStop(0,'rgba(255,255,255,.95)');g.addColorStop(.4,`rgba(${b},${b},${b+8},.75)`);g.addColorStop(1,'rgba(90,90,100,.55)')}
    c.fillStyle=g;c.beginPath();c.ellipse(0,0,rx,ry,0,0,Math.PI*2);c.fill();c.shadowColor='transparent';
    c.strokeStyle='rgba(255,255,255,.18)';c.lineWidth=1;c.stroke();
@@ -154,7 +154,7 @@ const CANVAS={
   const id=c.getImageData(0,0,W,H),d=id.data;for(let i=0;i<d.length;i+=4){const n=(Math.random()-.5)*38;d[i]+=n;d[i+1]+=n;d[i+2]+=n}c.putImageData(id,0,0);
   // databar
   const bh=H*.1;c.fillStyle='#000';c.fillRect(0,H-bh,W,bh);c.fillStyle='#ddd';c.font=`${Math.round(bh*.32)}px Space Grotesk, monospace`;c.textBaseline='middle';
-  c.fillText('ILLUSTRATIVE RENDER  ·  NOT A MICROGRAPH',W*.03,H-bh/2);c.fillStyle='#F5F5F2';c.fillRect(W*.74,H-bh*.6,W*.16,bh*.14);c.fillStyle='#ddd';c.fillText('50 µm',W*.77,H-bh*.25)}
+  c.fillText('ILLUSTRATIVE RENDER  ·  NOT A MICROGRAPH',W*.03,H-bh/2);c.fillStyle='#1F8FFF';c.fillRect(W*.74,H-bh*.6,W*.16,bh*.14);c.fillStyle='#ddd';c.fillText('50 µm',W*.77,H-bh*.25)}
 };
 function sizeCanvas(cv){const r=cv.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);cv.width=Math.max(300,r.width*dpr);cv.height=Math.max(230,r.height*dpr)}
 $$('svg[data-draw]').forEach(s=>s.innerHTML=DRAW[s.dataset.draw]());
@@ -376,17 +376,17 @@ $$('.icard').forEach(c=>{const f=()=>{const on=c.classList.toggle('flip');c.setA
 
 /* ---------- polycomm network ---------- */
 if(has('#pcCanvas'))(function(){const box=$('#pcNet'),cv=$('#pcCanvas'),c=cv.getContext('2d');let W=0,H=0,dpr=1,N=[],mx=-999,my=-999,run=false,pulses=[];
- const COL=['currentColor','#F5F5F2','#929292'];
+ const COL=['#1F8FFF','#F5F5F2','#929292'];
  function size(){const r=box.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);if(!N.length)seed();draw()}
  function node(x,y,t){return{x,y,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,t,r:t===0?4.5:3.5}}
  function seed(){const n=Math.round(Math.max(24,Math.min(46,W*H/5000)));for(let i=0;i<n;i++)N.push(node(Math.random()*W,Math.random()*H,i%3));count()}
  function count(){$('#pcCount').textContent=N.length+' members'}
  function draw(){c.clearRect(0,0,W,H);const L=Math.max(95,Math.min(130,W/4));
   for(let i=0;i<N.length;i++){const a=N[i];for(let j=i+1;j<N.length;j++){const b=N[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<L){c.strokeStyle=`rgba(120,140,170,${(1-d/L)*.35})`;c.lineWidth=1;c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke()}}
-   const dm=Math.hypot(a.x-mx,a.y-my);if(dm<L*1.4){c.strokeStyle=`rgba(200,200,200,${(1-dm/(L*1.4))*.9})`;c.lineWidth=1.3;c.beginPath();c.moveTo(a.x,a.y);c.lineTo(mx,my);c.stroke()}}
+   const dm=Math.hypot(a.x-mx,a.y-my);if(dm<L*1.4){c.strokeStyle=`rgba(31,143,255,${(1-dm/(L*1.4))*.9})`;c.lineWidth=1.3;c.beginPath();c.moveTo(a.x,a.y);c.lineTo(mx,my);c.stroke()}}
   N.forEach(a=>{c.beginPath();c.arc(a.x,a.y,a.r,0,7);if(a.t===2){c.strokeStyle=COL[2];c.lineWidth=1.5;c.fillStyle='#0d0d10';c.fill();c.stroke()}else{c.fillStyle=COL[a.t];c.fill()}});
-  pulses=pulses.filter(p=>(p.k+=.025)<1);pulses.forEach(p=>{c.strokeStyle=`rgba(220,220,220,${1-p.k})`;c.lineWidth=2;c.beginPath();c.arc(p.x,p.y,6+p.k*60,0,7);c.stroke()});
-  if(mx>-900){c.fillStyle='#F5F5F2';c.beginPath();c.arc(mx,my,5,0,7);c.fill()}}
+  pulses=pulses.filter(p=>(p.k+=.025)<1);pulses.forEach(p=>{c.strokeStyle=`rgba(31,143,255,${1-p.k})`;c.lineWidth=2;c.beginPath();c.arc(p.x,p.y,6+p.k*60,0,7);c.stroke()});
+  if(mx>-900){c.fillStyle='#1F8FFF';c.beginPath();c.arc(mx,my,5,0,7);c.fill()}}
  function step(){N.forEach(a=>{a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;const d=Math.hypot(a.x-mx,a.y-my);if(d<90&&d>0){a.vx+=(mx-a.x)/d*.012;a.vy+=(my-a.y)/d*.012}const s=Math.hypot(a.vx,a.vy);if(s>.9){a.vx*=.9/s;a.vy*=.9/s}});draw();if(run)requestAnimationFrame(step)}
  box.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;if(RM)draw()});
  box.addEventListener('pointerleave',()=>{mx=my=-999;if(RM)draw()});
@@ -401,14 +401,14 @@ if(has('#lab'))(function(){
  $('#labMono').innerHTML=Object.keys(MONO).map(k=>`<button aria-pressed="${k===kind}" data-k="${k}" title="${MONO[k].name}">${k}</button>`).join('');
  const atom=(i,a)=>{const row=Math.floor(i/U),col=i%U,j=col*2+a,x=row%2?X0+(U*2-1-j)*DX:X0+j*DX;return [x,Y0+row*RH+((j+row)%2?12:-12)]};
  function sideG(x,y,up){const s=MONO[kind].side;if(!s)return'';const d=up?-1:1,y2=y+d*20;
-  if(s==='Ph'){const cy=y+d*28,p=Array.from({length:6},(_,k)=>{const t=Math.PI/3*k+Math.PI/6;return(x+9*Math.cos(t)).toFixed(1)+','+(cy+9*Math.sin(t)).toFixed(1)}).join(' ');return`<path d="M${x} ${y}V${y+d*19}" stroke="#F5F5F2"/><polygon points="${p}" fill="none" stroke="#F5F5F2"/><circle cx="${x}" cy="${cy}" r="4" fill="none" stroke="currentColor"/>`}
-  return`<path d="M${x} ${y}V${y2}" stroke="#F5F5F2"/><circle cx="${x}" cy="${y2+d*5}" r="${s==='Cl'?7:5}" fill="${s==='Cl'?'currentColor':'#0d0d10'}" stroke="#F5F5F2"/>`}
+  if(s==='Ph'){const cy=y+d*28,p=Array.from({length:6},(_,k)=>{const t=Math.PI/3*k+Math.PI/6;return(x+9*Math.cos(t)).toFixed(1)+','+(cy+9*Math.sin(t)).toFixed(1)}).join(' ');return`<path d="M${x} ${y}V${y+d*19}" stroke="#F5F5F2"/><polygon points="${p}" fill="none" stroke="#F5F5F2"/><circle cx="${x}" cy="${cy}" r="4" fill="none" stroke="#1F8FFF"/>`}
+  return`<path d="M${x} ${y}V${y2}" stroke="#F5F5F2"/><circle cx="${x}" cy="${y2+d*5}" r="${s==='Cl'?7:5}" fill="${s==='Cl'?'#1F8FFF':'#0d0d10'}" stroke="#F5F5F2"/>`}
  function draw(added){const v=Math.min(n,MAXV);let s='',prev=null;
-  for(let i=0;i<v;i++){const a=atom(i,0),b=atom(i,1);let g='';if(prev)g+=`<path d="M${prev[0]} ${prev[1]}L${a[0]} ${a[1]}" stroke="currentColor" stroke-width="2"/>`;
-   const lo=a[1]>b[1]?a:b;g+=`<path d="M${a[0]} ${a[1]}L${b[0]} ${b[1]}" stroke="currentColor" stroke-width="2"/>`+sideG(lo[0],lo[1],false)+`<circle cx="${a[0]}" cy="${a[1]}" r="4" fill="#0d0d10" stroke="currentColor" stroke-width="1.5"/><circle cx="${b[0]}" cy="${b[1]}" r="4" fill="#0d0d10" stroke="currentColor" stroke-width="1.5"/>`;
+  for(let i=0;i<v;i++){const a=atom(i,0),b=atom(i,1);let g='';if(prev)g+=`<path d="M${prev[0]} ${prev[1]}L${a[0]} ${a[1]}" stroke="#1F8FFF" stroke-width="2"/>`;
+   const lo=a[1]>b[1]?a:b;g+=`<path d="M${a[0]} ${a[1]}L${b[0]} ${b[1]}" stroke="#1F8FFF" stroke-width="2"/>`+sideG(lo[0],lo[1],false)+`<circle cx="${a[0]}" cy="${a[1]}" r="4" fill="#0d0d10" stroke="#1F8FFF" stroke-width="1.5"/><circle cx="${b[0]}" cy="${b[1]}" r="4" fill="#0d0d10" stroke="#1F8FFF" stroke-width="1.5"/>`;
    s+=`<g class="u${added&&i>=v-added?' new':''}">${g}</g>`;prev=b}
   if(!n)s=`<g fill="#929292" font-family="Space Grotesk" font-size="14" text-anchor="middle"><text x="300" y="160">Tap here to start a chain</text><text x="300" y="184" font-size="11" letter-spacing="2">EACH TAP ADDS ONE REPEAT UNIT</text></g>`;
-  if(n>MAXV)s+=`<text x="552" y="322" fill="currentColor" font-family="Space Grotesk" font-size="13" text-anchor="end">+ ${(n-MAXV).toLocaleString('en-IN')} more units…</text>`;
+  if(n>MAXV)s+=`<text x="552" y="322" fill="#1F8FFF" font-family="Space Grotesk" font-size="13" text-anchor="end">+ ${(n-MAXV).toLocaleString('en-IN')} more units…</text>`;
   svg.innerHTML=s;
   const M=MONO[kind];$('#labN').textContent=n.toLocaleString('en-IN');$('#labM').textContent=Math.round(n*M.m0).toLocaleString('en-IN')+' g/mol';
   $('#labL').textContent=(n*0.254).toFixed(n<40?1:0)+' nm';$('#labM0').textContent=M.m0+' g/mol';$('#labFormula').innerHTML=`<b class="lime">${M.name}</b> &nbsp;${M.f}`;
@@ -440,9 +440,15 @@ if(!hasG||RM){
   const words=has('#manifesto')?splitWords($('#manifesto')):[];
   // signature stroke prep
   const intro=gsap.timeline({paused:true});
-  if(has('.hero')){
-  intro.from('#heroPortrait',{yPercent:8,opacity:0,duration:1.6,ease:'expo.out'})
-       .from('.hero-meta > *',{y:20,opacity:0,stagger:.1,duration:.9,ease:'power3.out'},'-=1.1')
+  if(has('.hero')){const sp=$('#sigPath');const sl=sp.getTotalLength();
+  intro.from('.hero .hl1',{yPercent:110,duration:1.2,ease:'expo.out'})
+       .from('.hero .hl2',{yPercent:110,duration:1.2,ease:'expo.out'},'-=1.05')
+       .from('#heroPortrait',{yPercent:12,opacity:0,duration:1.6,ease:'expo.out'},'-=1.2')
+       .from('#heroTopo path',{opacity:0,scale:.92,transformOrigin:'72% 50%',stagger:.03,duration:1.4,ease:'power2.out'},'-=1.6')
+       .fromTo(sp,{strokeDasharray:sl,strokeDashoffset:sl},{strokeDashoffset:0,duration:1.9,ease:'power2.inOut'},'-=1.1')
+       .from('.hey',{opacity:0,y:20,rotate:-14,duration:.8,ease:'back.out(2)'},'-=1.2')
+       .from('#hcAtoms circle',{scale:0,transformOrigin:'center',stagger:.02,duration:.5,ease:'back.out(3)'},'-=1.6')
+       .from('.hero-meta > *',{y:24,opacity:0,stagger:.08,duration:.8,ease:'power3.out'},'-=1.2')
        ;intro.fromTo('#nav',{yPercent:-120,y:0},{yPercent:0,y:0,duration:.9,ease:'expo.out',clearProps:'transform'},.2);}else intro.fromTo('#nav',{yPercent:-120,y:0},{yPercent:0,y:0,duration:.9,ease:'expo.out',clearProps:'transform'},.2);
   // loader
   const o={n:0},bar=$('#ld-bar'),num=$('#ld-n');
@@ -460,6 +466,9 @@ if(!hasG||RM){
 
   // hero scroll: portrait drift, chain parallax, name scale
   if(has('.hero'))gsap.to('#heroPortrait',{yPercent:14,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  if(has('.hero'))gsap.to('#heroChain',{y:-160,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  if(has('.hero'))gsap.to('.hero-name',{yPercent:-18,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'30% top',end:'bottom top',scrub:true}});
+  if(has('.hero'))gsap.to('#heroTopo',{rotate:6,scale:1.15,transformOrigin:'70% 50%',ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
 
   // section headings
   $$('.sec-head .line-mask>span').forEach(s=>gsap.from(s,{yPercent:110,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:s,start:'top 88%'}}));

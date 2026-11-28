@@ -41,7 +41,7 @@
 #mld .hud{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#929292}
 #mld .hud .s{color:#F5F5F2}
 #mld .hud .t{font-variant-numeric:tabular-nums;color:#ff8a1f;transition:color .6s}
-#mld.cool .hud .t{color:#F5F5F2}
+#mld.cool .hud .t{color:#1F8FFF}
 #mld .x{position:absolute;top:18px;right:18px;font-size:10px;letter-spacing:.16em;color:#929292;text-transform:uppercase}
 `;
   function build(){
